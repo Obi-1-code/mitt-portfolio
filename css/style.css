@@ -80,167 +80,377 @@ textarea {
   resize: vertical;
 }
 
+
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
 
-/* ==========================================================================
-   Helper classes
-   ========================================================================== */
+/* 1. Variables and general styling */
 
-/*
- * Hide visually and from screen readers
- */
+:root {
+  --color-background: #f6f5f2;
+  --color-surface: #ffffff;
+  --color-primary: #1d2939;
+  --color-secondary: #667085;
+  --color-accent: #e78b56;
+  --color-border: #e4e2dd;
 
-.hidden,
-[hidden] {
-  display: none !important;
+  --container-width: 1100px;
 }
 
-/*
- * Hide only visually, but have it available for screen readers:
- * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
- *
- * 1. For long content, line feeds are not interpreted as spaces and small width
- *    causes content to wrap 1 word per line:
- *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
- */
-
-.visually-hidden {
-  border: 0;
-  clip: rect(0, 0, 0, 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-  /* 1 */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-/*
- * Extends the .visually-hidden class to allow the element
- * to be focusable when navigated to via the keyboard:
- * https://www.drupal.org/node/897638
- */
+body {
+  background-color: var(--color-background);
+  color: var(--color-primary);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
 
-.visually-hidden.focusable:active,
-.visually-hidden.focusable:focus {
-  clip: auto;
+img {
+  max-width: 100%;
   height: auto;
-  margin: 0;
-  overflow: visible;
-  position: static;
-  white-space: inherit;
-  width: auto;
 }
 
-/*
- * Hide visually and from screen readers, but maintain layout
- */
-
-.invisible {
-  visibility: hidden;
+.container {
+  width: min(100% - 40px, var(--container-width));
+  margin-inline: auto;
 }
 
-/*
- * Clearfix: contain floats
- *
- * The use of `table` rather than `block` is only necessary if using
- * `::before` to contain the top-margins of child elements.
- */
-
-.clearfix::before,
-.clearfix::after {
-  content: "";
-  display: table;
+h1,
+h2,
+h3 {
+  line-height: 1.2;
 }
 
-.clearfix::after {
-  clear: both;
+
+/* 2. Header and navigation */
+
+.site-header {
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
 }
 
-/* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   These examples override the primary ('mobile first') styles.
-   Modify as content requires.
-   ========================================================================== */
-
-@media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */
+.header-content {
+  min-height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
 }
 
-@media print,
-  (-webkit-min-device-pixel-ratio: 1.25),
-  (min-resolution: 1.25dppx),
-  (min-resolution: 120dpi) {
-  /* Style adjustments for high resolution devices */
+.logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-decoration: none;
 }
 
-/* ==========================================================================
-   Print styles.
-   Inlined to avoid the additional HTTP request:
-   https://www.phpied.com/delay-loading-your-print-css/
-   ========================================================================== */
+.nav-list {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+}
 
-@media print {
-  *,
-  *::before,
-  *::after {
-    background: #fff !important;
-    color: #000 !important;
-    /* Black prints faster */
-    box-shadow: none !important;
-    text-shadow: none !important;
+.nav-list a {
+  text-decoration: none;
+  color: var(--color-secondary);
+  font-weight: bold;
+}
+
+.nav-list a:hover {
+  color: var(--color-accent);
+}
+
+
+/* 3. Hero section */
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: center;
+  padding-block: 70px;
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+.hero-content > p:not(.eyebrow) {
+  color: var(--color-secondary);
+  font-size: 1.1rem;
+  margin-bottom: 28px;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 360px;
+  margin-inline: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 24px;
+}
+
+.eyebrow {
+  color: var(--color-accent);
+  font-size: 0.8rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.button {
+  display: inline-block;
+  background-color: var(--color-primary);
+  color: white;
+  border: 2px solid var(--color-primary);
+  border-radius: 6px;
+  padding: 12px 24px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+
+/* 4. Main content and projects */
+
+.content-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  padding-block: 40px 80px;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.project-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 26px;
+}
+
+.project-number {
+  display: block;
+  color: var(--color-accent);
+  font-weight: bold;
+  margin-bottom: 18px;
+}
+
+.project-card p {
+  color: var(--color-secondary);
+  margin-bottom: 24px;
+}
+
+.project-tag {
+  display: inline-block;
+  background-color: #f5eee8;
+  color: #8a4d2c;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.about-section {
+  margin-top: 70px;
+  max-width: 700px;
+}
+
+.about-section p {
+  color: var(--color-secondary);
+  margin-bottom: 16px;
+}
+
+
+/* 5. Sidebar */
+
+.sidebar {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 28px;
+  align-self: start;
+}
+
+.facts-list {
+  margin-bottom: 30px;
+}
+
+.facts-list div {
+  padding-block: 12px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.facts-list dt {
+  color: var(--color-secondary);
+  font-size: 0.85rem;
+}
+
+.facts-list dd {
+  font-weight: bold;
+}
+
+.skills-list {
+  list-style: none;
+  margin-bottom: 28px;
+}
+
+.skills-list li {
+  padding-block: 7px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.sidebar a {
+  color: var(--color-accent);
+  font-weight: bold;
+}
+
+
+/* 6. Contact form */
+
+.contact-section {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 30px;
+  margin-bottom: 80px;
+}
+
+.contact-section > p:not(.eyebrow) {
+  color: var(--color-secondary);
+  margin-bottom: 30px;
+}
+
+.contact-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  font: inherit;
+}
+
+.form-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.form-checkbox input {
+  width: 18px;
+  height: 18px;
+  margin-top: 4px;
+  accent-color: var(--color-accent);
+}
+
+.form-checkbox label {
+  color: var(--color-secondary);
+}
+
+
+/* 7. Footer */
+
+.site-footer {
+  background-color: var(--color-primary);
+  color: white;
+  padding-block: 30px;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-content address {
+  font-style: normal;
+}
+
+.footer-content a {
+  color: white;
+}
+
+
+/* 8. Responsive design: Tablet */
+
+@media only screen and (min-width: 600px) {
+
+  .hero {
+    grid-template-columns: 1.2fr 0.8fr;
   }
 
-  a,
-  a:visited {
-    text-decoration: underline;
+  .project-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  a[href]::after {
-    content: " (" attr(href) ")";
+  .contact-form {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  abbr[title]::after {
-    content: " (" attr(title) ")";
+  .full-width {
+    grid-column: 1 / -1;
   }
 
-  /*
-   * Don't show links that are fragment identifiers,
-   * or use the `javascript:` pseudo protocol
-   */
-  a[href^="#"]::after,
-  a[href^="javascript:"]::after {
-    content: "";
+  .footer-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
 
-  pre {
-    white-space: pre-wrap !important;
+}
+
+
+/* 9. Responsive design: Desktop */
+
+@media only screen and (min-width: 900px) {
+
+  .content-layout {
+    grid-template-columns: minmax(0, 2fr) minmax(240px, 0.8fr);
+    gap: 40px;
   }
 
-  pre,
-  blockquote {
-    border: 1px solid #999;
-    page-break-inside: avoid;
-  }
+}
 
-  tr,
-  img {
-    page-break-inside: avoid;
-  }
 
-  p,
-  h2,
-  h3 {
-    orphans: 3;
-    widows: 3;
-  }
+/* 10. Accessibility */
 
-  h2,
-  h3 {
-    page-break-after: avoid;
-  }
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
 }

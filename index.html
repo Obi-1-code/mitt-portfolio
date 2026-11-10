@@ -1,33 +1,323 @@
+
 <!doctype html>
 <html class="no-js" lang="en">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
-  <link rel="stylesheet" href="css/style.css">
-  <meta name="description" content="">
 
-  <meta property="og:title" content="">
-  <meta property="og:type" content="">
+  <title>My Portfolio | Your Name</title>
+
+  <meta name="description" content="My personal portfolio showcasing my background and projects in web development.">
+
+  <!-- Open Graph metadata -->
+  <meta property="og:title" content="My Portfolio | Your Name">
+  <meta property="og:type" content="website">
   <meta property="og:url" content="">
   <meta property="og:image" content="">
-  <meta property="og:image:alt" content="">
+  <meta property="og:image:alt" content="My personal portfolio">
 
+  <!-- Favicon -->
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="icon.png">
 
   <link rel="manifest" href="site.webmanifest">
-  <meta name="theme-color" content="#fafafa">
+
+  <meta name="theme-color" content="#f6f5f2">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-  <!-- Add your site or application content here -->
-  <p>Hello world! This is HTML5 Boilerplate.</p>
-  <script src="js/app.js"></script>
+  <!-- Header -->
+  <header class="site-header">
 
-</body>
+    <div class="container header-content">
 
+      <a href="#top" class="logo">Your Name</a>
+
+      <nav aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="#about">About me</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <!-- Main content -->
+  <main id="top" class="container">
+
+    <!-- Presentation -->
+    <section class="hero" id="about">
+
+      <div class="hero-content">
+
+        <p class="eyebrow">Welcome to my portfolio</p>
+
+        <h1>Hi! My name is Your Name.</h1>
+
+        <p>
+          I am interested in technology, design and web development.
+          I am currently learning HTML and CSS while developing my
+          skills through different projects.
+        </p>
+
+        <a href="#projects" class="button">Explore my projects</a>
+
+      </div>
+
+      <div class="hero-image">
+
+        <img
+          src="img/profile.jpg"
+          alt="Portrait photograph of me"
+          width="600"
+          height="600"
+        >
+
+      </div>
+
+    </section>
+
+
+    <!-- Main layout -->
+    <div class="content-layout">
+
+      <div class="main-content">
+
+        <!-- Projects -->
+        <section id="projects">
+
+          <p class="eyebrow">What I have been working on</p>
+
+          <h2>My projects</h2>
+
+          <div class="project-grid">
+
+            <article class="project-card">
+
+              <span class="project-number">01</span>
+
+              <h3>My First Website</h3>
+
+              <p>
+                A project where I practise creating websites
+                using HTML and CSS.
+              </p>
+
+              <span class="project-tag">HTML & CSS</span>
+
+            </article>
+
+            <article class="project-card">
+
+              <span class="project-number">02</span>
+
+              <h3>Responsive Web Design</h3>
+
+              <p>
+                An exercise exploring how websites adapt
+                to different screen sizes and devices.
+              </p>
+
+              <span class="project-tag">Responsive Design</span>
+
+            </article>
+
+            <article class="project-card">
+
+              <span class="project-number">03</span>
+
+              <h3>My Portfolio</h3>
+
+              <p>
+                My personal portfolio where I collect my
+                projects and showcase my web development skills.
+              </p>
+
+              <span class="project-tag">Ongoing Project</span>
+
+            </article>
+
+          </div>
+
+        </section>
+
+
+        <!-- About -->
+        <section class="about-section">
+
+          <p class="eyebrow">A little more about me</p>
+
+          <h2>What I Want to Learn</h2>
+
+          <p>
+            My goal is to develop my web development skills
+            and learn how to create user-friendly, accessible
+            and responsive websites.
+          </p>
+
+        </section>
+
+      </div>
+
+
+      <!-- Sidebar -->
+      <aside class="sidebar">
+
+        <h2>Quick Facts</h2>
+
+        <dl class="facts-list">
+
+          <div>
+            <dt>Location</dt>
+            <dd>Your City</dd>
+          </div>
+
+          <div>
+            <dt>Field of Interest</dt>
+            <dd>Web Development</dd>
+          </div>
+
+          <div>
+            <dt>Education</dt>
+            <dd>HTML & CSS</dd>
+          </div>
+
+        </dl>
+
+        <h3>Skills</h3>
+
+        <ul class="skills-list">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>Responsive Design</li>
+          <li>Git & GitHub</li>
+        </ul>
+
+        <h3>Find Me Online</h3>
+
+        <p>
+          Visit my
+          <a href="https://github.com/"
+             target="_blank"
+             rel="noopener noreferrer">
+            GitHub profile
+          </a>.
+        </p>
+
+      </aside>
+
+    </div>
+
+
+    <!-- Contact form -->
+    <section class="contact-section" id="contact">
+
+      <p class="eyebrow">Let's get in touch</p>
+
+      <h2>Contact Me</h2>
+
+      <p>
+        Have a question or want to get in touch?
+        Fill out the form below.
+      </p>
+
+      <form class="contact-form">
+
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name"
+                 placeholder="Your name"
+                 autocomplete="name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email"
+                 placeholder="your@email.com"
+                 autocomplete="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="website">Website</label>
+          <input type="url" id="website" name="website"
+                 placeholder="https://example.com">
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone"
+                 placeholder="Your phone number"
+                 autocomplete="tel">
+        </div>
+
+        <div class="form-group full-width">
+          <label for="subject">Subject</label>
+          <select id="subject" name="subject" required>
+            <option value="" disabled selected>
+              Select an option
+            </option>
+            <option value="question">General Question</option>
+            <option value="project">Project Enquiry</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group full-width">
+          <label for="message">Message</label>
+          <textarea id="message" name="message"
+                    rows="5"
+                    placeholder="Write your message here..."
+                    required></textarea>
+        </div>
+
+        <div class="form-checkbox full-width">
+          <input type="checkbox" id="consent"
+                 name="consent" required>
+          <label for="consent">
+            I agree to be contacted regarding my message.
+          </label>
+        </div>
+
+        <div class="full-width">
+          <button type="submit" class="button">
+            Send Message
+          </button>
+        </div>
+
+      </form>
+
+    </section>
+
+  </main>
+
+
+  <!-- Footer -->
+  <footer class="site-footer">
+
+    <div class="container footer-content">
+
+      <p>&copy; 2026 My Name. All rights reserved.</p>
+
+      <address>
+        <a href="mailto:xxxxxx@example.com">
+          xxxxx@example.com
+        </a>
+      </address>
+
+    </div>
+
+  </footer>
+
+
+ </body>
 </html>
