@@ -105,8 +105,8 @@ textarea {
 }
 
 body {
-  background-color: var(--color-background);
-  color: var(--color-primary);
+  background-color: #131318;
+  color: #E9E7EF;
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.6;
 }
@@ -131,94 +131,150 @@ h3 {
 /* 2. Header and navigation */
 
 .site-header {
-  background-color: var(--color-surface);
-  border-bottom: 1px solid var(--color-border);
+  background-color: #131318;
+  border-bottom: 1px solid #3D384C;
 }
 
 .header-content {
-  min-height: 80px;
+  min-height: 75px;
+
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  gap: 24px;
 }
 
-.logo {
-  font-size: 1.4rem;
-  font-weight: bold;
-  text-decoration: none;
-}
+/* Navigation */
 
 .nav-list {
   display: flex;
-  gap: 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-list a {
   text-decoration: none;
-  color: var(--color-secondary);
+  color: #A6A1B5;
+  font-size: 14px;
   font-weight: bold;
+
+  transition: color 0.2s ease;
 }
 
 .nav-list a:hover {
-  color: var(--color-accent);
+  color: #AD7DE8;
 }
 
 
 /* 3. Hero section */
 
 .hero {
+  /* Layout */
   display: grid;
   grid-template-columns: 1fr;
   gap: 40px;
   align-items: center;
-  padding-block: 70px;
+
+  /* Spacing */
+  padding: 55px 40px;
+  margin-block: 40px;
+
+  /* Appearance */
+  background-color: #1B1A20;
+  border: 1px solid #3D384C;
+  border-radius: 20px;
 }
+
+/* Hero text container */
 
 .hero-content {
   max-width: 600px;
 }
 
-.hero-content > p:not(.eyebrow) {
-  color: var(--color-secondary);
-  font-size: 1.1rem;
-  margin-bottom: 28px;
-}
+/* Small introductory label */
 
-.hero-image img {
-  width: 100%;
-  max-width: 360px;
-  margin-inline: auto;
-  aspect-ratio: 1;
-  object-fit: cover;
-  border-radius: 24px;
-}
-
-.eyebrow {
-  color: var(--color-accent);
+.hero-eyebrow {
+  color: #AD7DE8;
   font-size: 0.8rem;
   font-weight: bold;
   letter-spacing: 2px;
   text-transform: uppercase;
-  margin-bottom: 12px;
+  margin-bottom: 20px;
 }
 
-.button {
+/* Main heading */
+
+.hero h1 {
+  color: #E9E7EF;
+  font-size: clamp(38px, 5vw, 58px);
+  line-height: 1.08;
+  margin-bottom: 25px;
+}
+
+/* Introduction paragraph */
+
+.hero-content > p:not(.hero-eyebrow) {
+  color: #A6A1B5;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+/* Hero button */
+
+.hero .button {
   display: inline-block;
-  background-color: var(--color-primary);
-  color: white;
-  border: 2px solid var(--color-primary);
+
+  background-color: #AD7DE8;
+  color: #131318;
+
+  border: 2px solid #AD7DE8;
   border-radius: 6px;
-  padding: 12px 24px;
+
+  padding: 13px 24px;
+
   font-weight: bold;
   text-decoration: none;
   cursor: pointer;
+
+  transition: background-color 0.2s ease;
 }
 
-.button:hover {
-  background-color: var(--color-accent);
-  border-color: var(--color-accent);
+.hero .button:hover {
+  background-color: #C19BEF;
+  border-color: #C19BEF;
+}
+
+/* Hero image container */
+
+.hero-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #24212E;
+  border: 1px solid #3D384C;
+  border-radius: 16px;
+
+  padding: 15px;
+}
+
+/* Actual image */
+
+.hero-image img {
+  display: block;
+
+  width: 100%;
+  max-width: 360px;
+
+  aspect-ratio: 1;
+  object-fit: cover;
+
+  border-radius: 10px;
 }
 
 
@@ -453,4 +509,23 @@ select:focus-visible,
 textarea:focus-visible {
   outline: 3px solid var(--color-accent);
   outline-offset: 3px;
+}
+
+
+/* 11. Hero Responsive Design */
+@media only screen and (max-width: 599px) {
+
+  .hero {
+    padding: 30px 22px;
+    gap: 30px;
+  }
+
+  .hero h1 {
+    font-size: 38px;
+  }
+
+  .hero-image {
+    padding: 10px;
+  }
+
 }
