@@ -280,11 +280,29 @@ h3 {
 
 /* 4. Main content and projects */
 
-.content-layout {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 40px;
-  padding-block: 40px 80px;
+.main-content {
+  color: #E9E7EF;
+}
+
+#projects {
+  margin-bottom: 55px;
+}
+
+.eyebrow {
+  color: #AD7DE8;
+  font-size: 0.8rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+#projects h2,
+.about-section h2,
+.sidebar h2,
+.contact-section h2 {
+  color: #E9E7EF;
+  margin-bottom: 25px;
 }
 
 .project-grid {
@@ -294,102 +312,143 @@ h3 {
 }
 
 .project-card {
-  background-color: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: 10px;
-  padding: 26px;
+  background-color: #1B1A20;
+  border: 1px solid #3D384C;
+  border-radius: 14px;
+  padding: 28px;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.project-card:hover {
+  border-color: #AD7DE8;
+  transform: translateY(-3px);
 }
 
 .project-number {
   display: block;
-  color: var(--color-accent);
+  color: #AD7DE8;
+  font-size: 0.85rem;
   font-weight: bold;
+  letter-spacing: 2px;
   margin-bottom: 18px;
 }
 
+.project-card h3 {
+  color: #E9E7EF;
+  font-size: 1.2rem;
+  margin-bottom: 14px;
+}
+
 .project-card p {
-  color: var(--color-secondary);
-  margin-bottom: 24px;
+  color: #A6A1B5;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 22px;
 }
 
 .project-tag {
   display: inline-block;
-  background-color: #f5eee8;
-  color: #8a4d2c;
-  padding: 5px 10px;
-  border-radius: 4px;
-  font-size: 0.8rem;
+  background-color: #24212E;
+  border: 1px solid #3D384C;
+  border-radius: 5px;
+  padding: 6px 10px;
+  color: #AD7DE8;
+  font-size: 0.75rem;
   font-weight: bold;
-}
-
-.about-section {
-  margin-top: 70px;
-  max-width: 700px;
-}
-
-.about-section p {
-  color: var(--color-secondary);
-  margin-bottom: 16px;
 }
 
 
 /* 5. Sidebar */
 
 .sidebar {
-  background-color: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: 10px;
-  padding: 28px;
-  align-self: start;
+  background-color: #1B1A20;
+  border: 1px solid #3D384C;
+  border-radius: 14px;
+  padding: 30px;
+  color: #E9E7EF;
+}
+
+.sidebar h2 {
+  font-size: 1.35rem;
+  margin-bottom: 25px;
+}
+
+.sidebar h3 {
+  color: #AD7DE8;
+  font-size: 1rem;
+  margin-top: 30px;
+  margin-bottom: 14px;
 }
 
 .facts-list {
-  margin-bottom: 30px;
+  margin: 0;
 }
 
 .facts-list div {
-  padding-block: 12px;
-  border-bottom: 1px solid var(--color-border);
+  padding: 15px 0;
+  border-bottom: 1px solid #3D384C;
 }
 
 .facts-list dt {
-  color: var(--color-secondary);
-  font-size: 0.85rem;
+  color: #AD7DE8;
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-bottom: 6px;
 }
 
 .facts-list dd {
-  font-weight: bold;
+  color: #E9E7EF;
+  margin: 0;
+  line-height: 1.5;
 }
 
 .skills-list {
   list-style: none;
-  margin-bottom: 28px;
+  padding: 0;
+  margin: 0;
 }
 
 .skills-list li {
-  padding-block: 7px;
-  border-bottom: 1px solid var(--color-border);
+  background-color: #24212E;
+  border: 1px solid #3D384C;
+  border-radius: 6px;
+  padding: 9px 12px;
+  margin-bottom: 9px;
+  color: #E9E7EF;
+  font-size: 0.9rem;
+}
+
+.sidebar p {
+  color: #A6A1B5;
+  line-height: 1.6;
 }
 
 .sidebar a {
-  color: var(--color-accent);
-  font-weight: bold;
+  color: #AD7DE8;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.sidebar a:hover {
+  color: #C19BEF;
+  text-decoration: underline;
 }
 
 
 /* 6. Contact form */
 
 .contact-section {
-  background-color: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: 12px;
-  padding: 30px;
-  margin-bottom: 80px;
+  background-color: #1B1A20;
+  border: 1px solid #3D384C;
+  border-radius: 16px;
+  padding: 40px;
+  margin-block: 50px;
 }
 
 .contact-section > p:not(.eyebrow) {
-  color: var(--color-secondary);
-  margin-bottom: 30px;
+  color: #A6A1B5;
+  line-height: 1.7;
+  margin-bottom: 25px;
 }
 
 .contact-form {
@@ -404,7 +463,10 @@ h3 {
   gap: 8px;
 }
 
-.form-group label {
+.form-group label,
+.form-checkbox label {
+  color: #E9E7EF;
+  font-size: 0.9rem;
   font-weight: bold;
 }
 
@@ -412,42 +474,94 @@ h3 {
 .form-group select,
 .form-group textarea {
   width: 100%;
-  padding: 12px;
-  border: 1px solid var(--color-border);
+  background-color: #24212E;
+  border: 1px solid #3D384C;
   border-radius: 6px;
-  font: inherit;
+  padding: 12px 14px;
+  color: #E9E7EF;
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #858093;
+}
+
+.form-group select {
+  cursor: pointer;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 130px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #AD7DE8;
+  box-shadow: 0 0 0 3px rgba(173, 125, 232, 0.15);
 }
 
 .form-checkbox {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 10px;
 }
 
 .form-checkbox input {
-  width: 18px;
-  height: 18px;
-  margin-top: 4px;
-  accent-color: var(--color-accent);
+  accent-color: #AD7DE8;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
 }
 
 .form-checkbox label {
-  color: var(--color-secondary);
+  font-weight: normal;
+  line-height: 1.5;
+}
+
+.contact-section .button {
+  display: inline-block;
+  background-color: #AD7DE8;
+  color: #131318;
+  border: 2px solid #AD7DE8;
+  border-radius: 6px;
+  padding: 13px 24px;
+  font-weight: bold;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.contact-section .button:hover {
+  background-color: #C19BEF;
+  border-color: #C19BEF;
 }
 
 
 /* 7. Footer */
 
 .site-footer {
-  background-color: var(--color-primary);
-  color: white;
-  padding-block: 30px;
+  background-color: #131318;
+  border-top: 1px solid #3D384C;
+  padding: 25px 0;
 }
 
 .footer-content {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 12px;
+  text-align: center;
+}
+
+.footer-content p {
+  color: #A6A1B5;
+  font-size: 0.85rem;
+  margin: 0;
 }
 
 .footer-content address {
@@ -455,7 +569,14 @@ h3 {
 }
 
 .footer-content a {
-  color: white;
+  color: #AD7DE8;
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+
+.footer-content a:hover {
+  color: #C19BEF;
+  text-decoration: underline;
 }
 
 
