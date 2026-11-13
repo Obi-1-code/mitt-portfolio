@@ -1,4 +1,4 @@
-\# Personal Portfolio – Jacob Brandhild
+# Personal Portfolio – Jacob Brandhild
 
 
 
@@ -6,7 +6,7 @@ A personal portfolio website created as part of my blockchain and HTML\&CSS deve
 
 
 
-\## About the Project
+## About the Project
 
 
 
@@ -16,37 +16,37 @@ The purpose of this project is to build a personal portfolio that works as an on
 
 
 
-\## Features
+## Features
 
 
 
-\- Responsive layout for desktop and mobile devices
+- Responsive layout for desktop and mobile devices
 
-\- Navigation links to the main sections of the website
+- Navigation links to the main sections of the website
 
-\- Introduction and personal profile section
+- Introduction and personal profile section
 
-\- Project portfolio with descriptions
+- Project portfolio with descriptions
 
-\- About me section and skills overview
+- About me section and skills overview
 
-\- Contact form with input validation
+- Contact form with input validation
 
-\- Semantic HTML structure and accessibility considerations
-
-
-
-\## Technologies
+- Semantic HTML structure and accessibility considerations
 
 
 
-\- HTML5
+## Technologies
 
-\- CSS3
 
-\- Git and GitHub
 
-\- HTML5 Boilerplate as the starting template
+- HTML5
 
-\- Figma for wireframes and design planning
+- CSS3
+
+- Git and GitHub
+
+- HTML5 Boilerplate as the starting template
+
+- Figma for wireframes and design planning
 
