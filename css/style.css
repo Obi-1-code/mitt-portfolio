@@ -25,13 +25,13 @@ html {
  */
 
 ::-moz-selection {
-  background: #b3d4fc;
-  text-shadow: none;
+  background: #AD7DE8;
+  color: #131318;
 }
 
 ::selection {
-  background: #b3d4fc;
-  text-shadow: none;
+  background: #AD7DE8;
+  color: #131318;
 }
 
 /*
@@ -88,13 +88,6 @@ textarea {
 /* 1. Variables and general styling */
 
 :root {
-  --color-background: #f6f5f2;
-  --color-surface: #ffffff;
-  --color-primary: #1d2939;
-  --color-secondary: #667085;
-  --color-accent: #e78b56;
-  --color-border: #e4e2dd;
-
   --container-width: 1100px;
 }
 
@@ -105,6 +98,7 @@ textarea {
 }
 
 body {
+  margin: 0;
   background-color: #131318;
   color: #E9E7EF;
   font-family: Arial, Helvetica, sans-serif;
@@ -158,7 +152,7 @@ h3 {
 
 .nav-list a {
   text-decoration: none;
-  color: #A6A1B5;
+  color: #AD7DE8;
   font-size: 14px;
   font-weight: bold;
 
@@ -166,7 +160,7 @@ h3 {
 }
 
 .nav-list a:hover {
-  color: #AD7DE8;
+  color: #C19BEF;
 }
 
 
@@ -176,11 +170,11 @@ h3 {
   /* Layout */
   display: grid;
   grid-template-columns: 1fr;
-  gap: 40px;
+  gap: 30px;
   align-items: center;
 
   /* Spacing */
-  padding: 55px 40px;
+  padding: 30px 22px;
   margin-block: 40px;
 
   /* Appearance */
@@ -260,7 +254,7 @@ h3 {
   border: 1px solid #3D384C;
   border-radius: 16px;
 
-  padding: 15px;
+  padding: 10px;
 }
 
 /* Actual image */
@@ -279,10 +273,6 @@ h3 {
 
 
 /* 4. Main content and projects */
-
-.main-content {
-  color: #E9E7EF;
-}
 
 #projects {
   margin-bottom: 55px;
@@ -391,7 +381,7 @@ h3 {
 
 .facts-list dt {
   color: #AD7DE8;
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: bold;
   margin-bottom: 6px;
 }
@@ -441,7 +431,7 @@ h3 {
   background-color: #1B1A20;
   border: 1px solid #3D384C;
   border-radius: 16px;
-  padding: 40px;
+  padding: clamp(24px, 4vw, 40px);
   margin-block: 50px;
 }
 
@@ -485,7 +475,7 @@ h3 {
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-  color: #858093;
+  color: #9691A5;
 }
 
 .form-group select {
@@ -493,14 +483,12 @@ h3 {
 }
 
 .form-group textarea {
-  resize: vertical;
   min-height: 130px;
 }
 
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
-  outline: none;
   border-color: #AD7DE8;
   box-shadow: 0 0 0 3px rgba(173, 125, 232, 0.15);
 }
@@ -580,12 +568,28 @@ h3 {
 }
 
 
-/* 8. Responsive design: Tablet */
+
+/* 8. Main content layout */
+
+.content-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+
+/* 9. Responsive design: Tablet */
 
 @media only screen and (min-width: 600px) {
 
   .hero {
     grid-template-columns: 1.2fr 0.8fr;
+    padding: 55px 40px;
+    gap: 40px;
+  }
+
+  .hero-image {
+    padding: 15px;
   }
 
   .project-grid {
@@ -604,12 +608,13 @@ h3 {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    text-align: left;
   }
 
 }
 
 
-/* 9. Responsive design: Desktop */
+/* 10. Responsive design: Desktop */
 
 @media only screen and (min-width: 900px) {
 
@@ -621,32 +626,19 @@ h3 {
 }
 
 
-/* 10. Accessibility */
+/* 11. Accessibility */
 
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible {
-  outline: 3px solid var(--color-accent);
-  outline-offset: 3px;
+  outline: 3px solid #AD7DE8;
+  outline-offset: 4px;
 }
 
-
-/* 11. Hero Responsive Design */
-@media only screen and (max-width: 599px) {
-
-  .hero {
-    padding: 30px 22px;
-    gap: 30px;
-  }
-
-  .hero h1 {
-    font-size: 38px;
-  }
-
-  .hero-image {
-    padding: 10px;
-  }
-
+.nav-list a:focus-visible {
+  color: #AD7DE8;
+  background-color: #24212E;
+  border-radius: 4px;
 }
